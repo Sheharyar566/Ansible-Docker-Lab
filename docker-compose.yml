@@ -5,26 +5,26 @@ services:
     build: ./node
     container_name: node1
     networks:
-      - ansible-network
+      - ansible
     ports:
-      - 2221:22
+      - "2221:22"
 
   node2:
     build: ./node
     container_name: node2
     networks:
-      - ansible-network
+      - ansible
     ports:
-      - 2222:22
-  
+      - "2222:22"
+
   node3:
     build: ./node
     container_name: node3
     networks:
-      - ansible-network
+      - ansible
     ports:
-      - 2223:22
+      - "2223:22"
 
 networks:
-  ansible-network:
+  ansible:
     driver: bridge

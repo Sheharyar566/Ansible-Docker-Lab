@@ -22,6 +22,6 @@ docker compose up --build -d
 for i in $(seq 1 3)
 do
     PORT="222$i"
-    echo $PORT
-    sshpass -p "devpass" ssh-copy-id -i "$PWD/ansible.pub" -p $PORT devuser@localhost
+    echo "Copying SSH key to devuser@localhost:$PORT"
+    sshpass -p "devpass" ssh-copy-id -o StrictHostKeyChecking=no -i "$PWD/ansible.pub" -p $PORT devuser@localhost
 done

@@ -6,6 +6,7 @@ services:
       - ansible
     ports:
       - "2221:22"
+      - "3221:80"
 
   node2:
     build: ./node
@@ -14,6 +15,7 @@ services:
       - ansible
     ports:
       - "2222:22"
+      - "3222:80"
 
   node3:
     build: ./node
@@ -22,6 +24,7 @@ services:
       - ansible
     ports:
       - "2223:22"
+      - "3223:80"
 
 networks:
   ansible:

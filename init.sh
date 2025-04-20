@@ -23,5 +23,5 @@ for i in $(seq 1 3)
 do
     PORT="222$i"
     echo $PORT
-    ssh-copy-id -i "$PWD/ansible.pub" -p $PORT root@localhost
+    sshpass -p "devpass" ssh-copy-id -i "$PWD/ansible.pub" -p $PORT devuser@localhost
 done

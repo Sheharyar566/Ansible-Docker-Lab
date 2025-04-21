@@ -1,6 +1,6 @@
 services:
   node1:
-    build: ./node
+    build: ./node/ubuntu
     container_name: node1
     networks:
       - ansible
@@ -9,7 +9,8 @@ services:
       - "3221:80"
 
   node2:
-    build: ./node
+    build: ./node/arch
+    platform: linux/amd64
     container_name: node2
     networks:
       - ansible
@@ -18,7 +19,7 @@ services:
       - "3222:80"
 
   node3:
-    build: ./node
+    build: ./node/fedora
     container_name: node3
     networks:
       - ansible
